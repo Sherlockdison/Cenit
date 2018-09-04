@@ -1,4 +1,5 @@
 <?php
+
 	$pageTitle = "Inicio";
 	$bodyClass = "home";
 	include "partials/head.php";
