@@ -5,12 +5,15 @@
 
 body {
 	font-family: 'Telex', sans-serif;
-	background-image: url('../images/page-img/aquarium-01.jpg');
-	background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: left;
-
 	}
+
+.body-main {
+	font-family: 'Telex', sans-serif;
+	background-image: url('../images/background-image.png');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: left;
+}
 
 ul, ol {
 	list-style: none;
@@ -36,6 +39,7 @@ footer {
 img{
 	width: 100%;
 }
+
 
 /*------moBile menos de 640px--------*/
 
@@ -100,7 +104,6 @@ border-radius: 6px;
 }
 
 /*___________________footer___________________*/
-
 .footer-info {
 	display:  none;
 }
@@ -146,6 +149,15 @@ border-radius: 6px;
 	margin: 0 3.4%;
 }
 
+/*---------------------------Faq.php---------------------------*/
+
+.faq-container {
+	background-color: #fff;
+}
+.faq-container h2, h1 {
+	text-align: center;
+}
+
 /*---------------------------FORM-----------------------------*/
 
 .container-page{
@@ -161,11 +173,17 @@ border-radius: 6px;
 	text-align: center;
 	margin: 5%;
 }
-/*___________------________Mobile + de 640px____________--------_______*/
+.button {
+   background-color: white;
+   color: black;
+   border: 2px solid;
+}
+/*-------------------------------------Mobile + de 640px---------------------------------------*/
 
 @media (min-width: 640px) {
 
-	/*___________________Header - NavBar___________________*/
+/*___________________Header - NavBar___________________*/
+
 	.header-container {
 		background-color: #fff;
 		display: flex;
@@ -301,8 +319,7 @@ border-radius: 6px;
 		color: #555;
 		margin: 0 3.4%;
 	}
-/* ____profile.php _____________________________*/
-
+/* _________________________________profile.php _______________________________________*/
 
 .container-user-profile {
 	width: 80%;
