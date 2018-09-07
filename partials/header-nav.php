@@ -5,9 +5,7 @@
 
 		<nav class="navbar-nav">
 
-			<a href="#" class="toggle-nav"> <!-- toggle: alternar la nav-->
-				<!-- <i class="fas fa-bars"></i>   no entiendo revisar en grabación-->
-			</a>
+			<a href="#" class="toggle-nav"> </a>
 
 			<ul>
 				<li><a class="link-nav-" href="index.php">Inicio</a></li>

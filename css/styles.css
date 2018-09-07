@@ -7,7 +7,7 @@ body {
 	font-family: 'Telex', sans-serif;
 	}
 
-.body-main {
+.body-index {
 	font-family: 'Telex', sans-serif;
 	background-image: url('../images/background-image.png');
 	background-repeat: no-repeat;
@@ -107,7 +107,10 @@ border-radius: 6px;
 .footer-info {
 	display:  none;
 }
-.link-footer1{
+.footer-info img {
+	width: 70%;
+}
+.link-footer1 {
 	width: 100%;
 	padding: 1.2%;
 	font-size: 2em;
@@ -151,11 +154,28 @@ border-radius: 6px;
 
 /*---------------------------Faq.php---------------------------*/
 
+.body-faq {
+	background-image: url('../images/page-img/aquarium-01.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: left;
+}
 .faq-container {
 	background-color: #fff;
+	display: flex;
+	flex-wrap: wrap;
+	width: 80%;
 }
 .faq-container h2, h1 {
 	text-align: center;
+	padding: 1% 0;
+}
+.faq-container article {
+	padding: 1% 15%
+}
+
+.faq-container p {
+	text-align: justify;
 }
 
 /*---------------------------FORM-----------------------------*/

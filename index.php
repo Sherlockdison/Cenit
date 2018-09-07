@@ -5,7 +5,7 @@
 	include "partials/head.php";
 ?>
 
-<body>
+<body class="body-index">
 		<?php require_once "partials/header-nav.php"; ?>
 			<div class="body-main">
 

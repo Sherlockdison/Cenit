@@ -5,7 +5,7 @@
       <h6>info@cenit.com</h6>
        <br>
         <h2>Newslleter</h2>
-        <a href="#"><img src="images/newsletter.png" alt="newalleter"></a> 
+        <a href="#"><img src="images/newsletter.png" alt="newslleter"></a>
         </section>
 
         <section class="link-footer1">
@@ -33,6 +33,6 @@
           </ul>
         </section>
         <div class="copyright">
-          <h6><strong>by Camila & Edison en DigitalHouse @2018.</strong> Todos los derechos reservados.</h6>
+          <h6><strong>by Camila & Edison - FullStacks - DigitalHouse @2018.</strong> Todos los derechos reservados.</h6>
         </div>
       </footer>
