@@ -155,23 +155,18 @@ border-radius: 6px;
 /*---------------------------Faq.php---------------------------*/
 
 .body-faq {
-	background-image: url('../images/page-img/aquarium-01.jpg');
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: left;
+	background-color: #fff;
 }
 .faq-container {
-	background-color: #fff;
 	display: flex;
 	flex-wrap: wrap;
-	width: 80%;
+	justify-content: flex-end;
 }
 .faq-container h2, h1 {
-	text-align: center;
-	padding: 1% 0;
+	padding: 1% 15%;
 }
 .faq-container article {
-	padding: 1% 15%
+	padding: 10% 5% 0% 25%;
 }
 
 .faq-container p {
