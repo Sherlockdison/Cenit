@@ -157,19 +157,20 @@ border-radius: 6px;
 .body-faq {
 	background-color: #fff;
 }
-.faq-container {
+.question-container{
+	display: none;
+}
+.answer-container {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-end;
 }
-.faq-container h2, h1 {
-	padding: 1% 15%;
+.answer-container h2, h1 {
+	padding: 2% 3%;
 }
-.faq-container article {
-	padding: 10% 5% 0% 25%;
+.answer-container article {
+	padding: 1% 3%;
 }
-
-.faq-container p {
+.answer-container p {
 	text-align: justify;
 }
 
@@ -193,7 +194,7 @@ border-radius: 6px;
    color: black;
    border: 2px solid;
 }
-/*-------------------------------------Mobile + de 640px---------------------------------------*/
+/*---------------------------------Mobile + de 640px-------------------------------------*/
 
 @media (min-width: 640px) {
 
@@ -334,6 +335,7 @@ border-radius: 6px;
 		color: #555;
 		margin: 0 3.4%;
 	}
+
 /* _________________________________profile.php _______________________________________*/
 
 .container-user-profile {
@@ -418,4 +420,31 @@ border-radius: 6px;
   .user-profile-options {
     width: 100%;
     text-align: center;
-	  }
+	}
+}
+
+@media (min-width: 1000px) {
+		/*---------------------------Faq.php---------------------------*/
+
+.faq-container {
+display: flex;
+flex-wrap: wrap;
+}
+.question-container{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	width: 33.33%;
+}
+.answer-container{
+	width: 66.66%;
+}
+.faq-container h2, h1 {
+	padding: 2% 0%;
+}
+.faq-container article {
+padding: 2% 5% 0% 0%;
+}
+.faq-container p {
+text-align: justify;
+}
