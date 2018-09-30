@@ -1,8 +1,30 @@
 <?php
+		// controladores
+	require_once 'register-controller.php';
+
+		// preguntamos si el usuario esta logeado para saber si mostrar o no el profile.php
+	if ( isLogged() ) {
+		header('location: profile.php');
+		exit;
+	}
+	// Titulo de la pagina y llamado a partials
 	$pageTitle = "Mi pefil";
 	include "partials/head.php";
+	require_once "partials/header-nav.php";
+
+	$countries = [
+		'ar' => 'Argentina',
+		'bo' => 'Bolivia',
+		'br' => 'Brasil',
+		'co' => 'Colombia',
+		'cl' => 'Chile',
+		'ec' => 'Ecuador',
+		'pa' => 'Paraguay',
+		'pe' => 'Perú',
+		'uy' => 'Uruguay',
+		've' => 'Venezuela',
+	];
 ?>
-	<?php require_once "partials/header-nav.php"; ?>
 
 <!-- Partial register.php-->
 <body>
