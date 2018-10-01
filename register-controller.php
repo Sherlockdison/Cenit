@@ -33,7 +33,7 @@
 		$errors = [];
 
 		$name = trim($formData['userFullName']);
-		$nameUser = trim($formData['nickname'])
+		$userName = trim($formData['userNickName']);
 		$email = trim($formData['userEmail']);
 		$password = trim($formData['userPassword']);
 		$rePassword = trim($formData['userRePassword']);
@@ -44,10 +44,10 @@
 			$errors['fullName'] = 'Escribí tu nombre completo';
 		}
 
-		if ( empty($nameUser) ) {
-			$errors['nickname'] = 'Escribí un nombre de usuario';
-		} else if ( usersExist($nameUser) ) {
-			$errors['nickname'] = 'Este nombre de usuario ya fue registrado';
+		if ( empty($userName) ) {
+			$errors['nickName'] = 'Escribí un nombre de usuario';
+		} else if ( usersExist($userName) ) {
+			$errors['nickName'] = 'Este nombre de usuario ya fue registrado';
 		}
 
 		if ( empty($email) ) {
@@ -87,7 +87,7 @@
 		$user = [
 			'id' => setId(),
 			'name' => $data['userFullName'],
-			'nameUser' => $data['nickname']
+			'nameUser' => $data['userNickName'],
 			'email' => $data['userEmail'],
 			'password' => password_hash($data['userPassword'], PASSWORD_DEFAULT),
 			'country' => $data['userCountry'],
@@ -151,11 +151,11 @@
 	}
 
 	// Función si existe un nombre de user
-	function usersExist($nameUser) {
+	function usersExist($userName) {
 		$allUsers = getAllUsers();
 
 		foreach ($allUsers as $oneUser) {
-			if ($nameUser == $oneUser['nameUser']) {
+			if ($userName == $oneUser['nameUser']) {
 				return true;
 			}
 		}

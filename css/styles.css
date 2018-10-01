@@ -39,6 +39,34 @@ footer {
 img{
 	width: 100%;
 }
+		/* clases de bootstrap que se deben renombrar y reestructurar para que funcionen de forma correcto en la pag */
+	.alertDanger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+	}
+
+	.form-control {
+	  display: block;
+	  width: 100%;
+	  height: calc(2.25rem + 2px);
+	  padding: 0.375rem 0.75rem;
+	  font-size: 1rem;
+	  line-height: 1.5;
+	  color: #495057;
+	  background-color: #fff;
+	  background-clip: padding-box;
+	  border: 1px solid #ced4da;
+	  border-radius: 0.25rem;
+	  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	}
+	.invalid-feedback {
+	  display: none;
+	  width: 100%;
+	  margin-top: 0.25rem;
+	  font-size: 80%;
+	  color: #dc3545;
+	}
 
 
 /*------moBile menos de 640px--------*/
@@ -178,15 +206,17 @@ border-radius: 6px;
 
 .container-page{
 	width: 100%;
-	display: block;
+	display: flex;
 }
 .container-img{
 	display: none;
 }
 .container-form{
 	width: 100%;
-	display: block;
+	display: flex;
+	flex-wrap: wrap;
 	text-align: center;
+	justify-content: center;
 	margin: 5%;
 }
 .button {
@@ -373,27 +403,26 @@ border-radius: 6px;
 /*_______login.php && register.php__________________*/
 
 	.container-page{
-		padding: 50px;
-		width: 800px;
-		margin: auto;
-		overflow: hidden;
-		height: 500px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
 	}
 	.container-img{
-		display: inline;
+		padding-top: 120px;
+		display: flex;
+		width: 25%;
+		height: 550px;
 	}
 
-	.container-img img {
+	/* .container-img img {
     border-style: none;
     width: 50%;
-	}
+	} */
 
 	.container-form{
 		padding-top: 30px;
-		width: 50%;
-		height: 120px;
-		float: left;
-		margin: 0;
+		width: 25%;
+		display: flex;
 	}
 
 	/* _____profile.php___________________________ */
