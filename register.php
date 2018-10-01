@@ -89,7 +89,7 @@
 										 <label><b>Correo electrónico:</b></label>
 											<input
 												type="text"
-												placeholder="Enter Email"
+												placeholder="Ingresar email"
 												name="userEmail"
 												class="form-control <?= isset($errors['email']) ? 'is-invalid' : ''; ?>"
 												value="<?= $userEmail; ?>"
@@ -130,10 +130,10 @@
 											<?php endif; ?>
 										</div>
 										<div class="">
-											<label><b>Repetir Password:</b></label>
+											<label><b>Repetir password:</b></label>
 											<input
 												type="password"
-												placeholder="Repetir contraseña"
+												placeholder="Repetir password"
 												name="userRePassword"
 												class="form-control <?= isset($errors['password']) ? 'is-invalid' : ''; ?>"
 											>
@@ -143,6 +143,40 @@
 												</div>
 											<?php endif; ?>
 										</div>
+										<div class="">
+											<label><b>País de nacimiento:</b></label>
+											<select
+												name="userCountry"
+												class="form-control <?= isset($errors['country']) ? 'is-invalid' : ''; ?>"
+											>
+												<option value="">Elegí un país</option>
+												<?php foreach ($countries as $code => $country): ?>
+													<option
+														<?= $code == $userCountry ? 'selected' : '' ?>
+														value="<?= $code ?>"><?= $country ?></option>
+												<?php endforeach; ?>
+											</select>
+											<?php if (isset($errors['country'])): ?>
+												<div class="invalid-feedback">
+													<?= $errors['country'] ?>
+												</div>
+											<?php endif; ?>
+										</div>
+										<div class="">
+											<label><b>Imagen de perfil:</b></label>
+											<div class="custom-file">
+												<input
+													type="file"
+													class="custom-file-input <?= isset($errors['image']) ? 'is-invalid' : ''; ?>"
+												 	name="userAvatar"
+												>
+												<label class="custom-file-label">Elija el archivo...</label>
+												<?php if (isset($errors['image'])): ?>
+													<div class="invalid-feedback">
+														<?= $errors['image'] ?>
+													</div>
+												<?php endif; ?>
+										</div>
 
 										<p>Creando una cuenta aceptas nuestras <a href="#" style="color:dodgerblue">Politicas de privacidad</a>.</p>
 
@@ -151,10 +185,10 @@
 
 				 	</form>
 				 </div>
+			 </div>
 				 <div class="container-img">
 					 <img src="images/page-img/leaves.jpg"	class="page-img">
 				 </div>
-			 </div>
 			 <div class="corteFooter">
 
 			 </div>
