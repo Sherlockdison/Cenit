@@ -40,6 +40,12 @@ img{
 	width: 100%;
 }
 		/* clases de bootstrap que se deben renombrar y reestructurar para que funcionen de forma correcto en la pag */
+	.is-invalid {
+			border-color: rgba(199, 0, 0, 0.71) ;
+			padding: 6px;
+			margin-top: 5px;
+		}
+
 	.alertDanger {
   color: #721c24;
   background-color: #f8d7da;

@@ -29,10 +29,5 @@ if ( !isLogged() ) {
 					</section>
 				</div>
 			</container>
-
-
-
-</body>
-
 	<?php require_once "partials/footer.php"; ?>
 </html>

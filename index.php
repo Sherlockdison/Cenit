@@ -1,5 +1,10 @@
 <?php
+	require_once 'register-controller.php';
 
+	if ( isLogged() ) {
+		$theUser = getUserByEmail($_SESSION['user']['email']);
+	}
+	
 	$pageTitle = "Inicio";
 	$bodyClass = "home";
 	include "partials/head.php";

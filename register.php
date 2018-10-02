@@ -52,9 +52,7 @@
 ?>
 
 <body>
-          <!-- Partial register.php-->
-<?php require_once "partials/header-nav.php";  ?>
-
+	<?php require_once "partials/header-nav.php";  ?>
 	 <div class="container-page">
 		 <div class="container-img">
 			 <img src="images/page-img/leaves.jpg"	class="page-img">
