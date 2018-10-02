@@ -1,11 +1,11 @@
 <?php
-	require_once 'register-controller.php';
 
-	if ( !isLogged() ) {
-		header('location: login.php');
-		exit;
-	}
+require_once 'register-controller.php';
 
+if ( !isLogged() ) {
+	header('location: login.php');
+	exit;
+}
 	$pageTitle = "Mi pefil";
 	include "partials/head.php";
 	$theUser = $_SESSION['user'];
@@ -14,11 +14,14 @@
 		<?php require_once "partials/header-nav.php"; ?>
 			<container class=container-user-profile>
 					<div class="container-profile-img">
-						<img  class=user-profile-image src="data/avatars/<?= $theUser['avatar'] ?>" >
+						<img  class=user-profile-image
+						src="data/avatars/<?= $theUser['avatar'] ?>" alt="" >
 					</div>
 						<br>
 					<div class="container-profile-data">
 						<h2 class=user-name><?= $theUser['name'] ?></h2>
+						<br>
+						<h3 class=user-data><?= $theUser['email'] ?></h3>
 
 						<section class="user-profile-options">
 						<p><a	href="#"></a> Mis compras</p>
@@ -29,6 +32,7 @@
 
 
 
+</body>
 
 	<?php require_once "partials/footer.php"; ?>
 </html>

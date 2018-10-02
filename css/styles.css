@@ -142,6 +142,10 @@ border-radius: 6px;
 .shop-car {
 	width: 5%;
 }
+.imgNavProf{
+	border-radius: 50%;
+	width: auto;
+	}
 
 /*___________________body-index___________________*/
 
@@ -232,27 +236,46 @@ border-radius: 6px;
 
 /*---------------------------FORM-----------------------------*/
 
-.container-page{
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-}
-.container-img{
-	display: none;
-}
-.container-form{
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
-	text-align: center;
-	justify-content: center;
-	margin: 5%;
-}
-.button {
-   background-color: white;
-   color: black;
-   border: 2px solid;
-}
+	.container-page{
+		width: 100%;
+		display: block;
+	}
+	.container-img{
+		display: none;
+	}
+	.container-form{
+		width: 100%;
+		display: block;
+		text-align: center;
+		margin: 5%;
+	}
+	.formInput {
+		border-color: black ;
+		padding: 6px;
+		margin-top: 5px;
+	}
+	.signupBtn
+	{
+	border-color: black;
+	color: white;
+	background: black;
+	padding: 5px 10px;
+	margin-left: 10px;
+	}
+
+	.signupBtn:hover
+	{
+		border-color: grey;
+		color: white;
+		background: grey;
+
+	}
+	.cancelBtn {
+		border-color:black;
+		color: black;
+		background: white;
+		padding: 5px 10px;
+	}
 /*---------------------------------Mobile + de 640px-------------------------------------*/
 
 @media (min-width: 640px) {
@@ -430,35 +453,40 @@ border-radius: 6px;
 /*_______login.php && register.php__________________*/
 
 	.container-page{
-		width: 100%;
-		display: flex;
-		justify-content: center;
+		padding: 50px;
+		width: 800px;
+		margin: auto;
+		overflow: hidden;
+		height:auto;
+		margin-bottom: 30px;
 	}
 
 	.container-img{
-		padding-top: 100px;
-		display: flex;
-		width: 28%;
-		height: 570px;
-		margin: 1%;
+		display: inline;
 	}
 
-	/* .container-img img {
+	.container-img img {
     border-style: none;
     width: 50%;
-	} */
+	}
 
 	.container-form{
-		width: 35%;
-    display: flex;
+		padding-top: 30px;
+		width: 50%;
+		height: 120px;
+		float: left;
+		margin: 0;
+	}
+	.registerTitle{
+		margin-top:  0px !important;
 	}
 
 	/* _____profile.php___________________________ */
 
 	.container-user-profile {
-	  width: 640px;
+		width: 640px;
 		margin: 20px auto;
-	  display: flex;
+		display: flex;
 		justify-content: center;
 		flex-direction: row;
 
@@ -468,17 +496,18 @@ border-radius: 6px;
 
 		}
 	.container-profile-data{
-  	width: 50%;
+		width: 50%;
 
-  	  }
-  .user-name{
-      text-align: center;
-  }
-  .user-profile-options {
-    width: 100%;
-    text-align: center;
+			}
+	.user-name{
+			text-align: center;
+	}
+	.user-profile-options {
+		width: 100%;
+		text-align: center;
 	}
 }
+
 
 @media (min-width: 1000px) {
 		/*---------------------------Faq.php---------------------------*/

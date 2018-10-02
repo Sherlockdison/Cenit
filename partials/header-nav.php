@@ -10,7 +10,7 @@
 			<a href="#" class="toggle-nav"> </a>
 
 			<ul>
-				<li><a class="link-nav-" href="index.php">Inicio</a></li>				
+				<li><a class="link-nav-" href="index.php">Inicio</a></li>
 				<li><a class="link-nav" href="faq.php">Preguntas Frecuentes</a></li>
 				<li><a class="link-nav" href="product-catalog.php">Tienda</a></li>
 			</ul>
@@ -21,10 +21,10 @@
 							href="profile.php"
 						>
 							<img
-								src="data/avatars/<?= $theUser['avatar'] ?>"
-								width="40" style="border-radius: 50%;"
+								class="imgNavProf"
+								src="data/avatars/<?= $theUser['avatar'] ?>"								
 							>
-								<?= $theUser['name'] ?>
+							<?= $theUser['name'] ?>
 						</a>
 					</li>
 					<li>

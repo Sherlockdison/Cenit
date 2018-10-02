@@ -56,7 +56,10 @@
 <?php require_once "partials/header-nav.php";  ?>
 
 	 <div class="container-page">
-			   <div class="container-form">
+		 <div class="container-img">
+			 <img src="images/page-img/leaves.jpg"	class="page-img">
+		 </div>
+			   <div class="container-form" "register">
 					 <?php if ( $errors ): ?>
 						 <div class="alertDanger">
 							 <ul>
@@ -71,12 +74,15 @@
 		         	<p>Por favor llena este formulario <br> para crear una cuenta.</p>
 		         		<br>
 									<div class="">
+										<br>
+										<br>
 										<label><b>Nombre completo</b></label>
+										<br>
 		 								 <input
 										 	type="text"
 											placeholder="Nombre completo"
 											name="userFullName"
-											class="form-control <?= isset($errors['fullName']) ? 'is-invalid' : ''; ?>"
+											class="formInput <?= isset($errors['fullName']) ? 'is-invalid' : ''; ?>"
 											value="<?= $userFullName; ?>"
 											>
 											<?php if (isset($errors['fullName'])): ?>
@@ -86,12 +92,15 @@
 											<?php endif; ?>
 										</div>
 										<div class="">
+											<br>
+											<br>
 										 <label><b>Correo electrónico:</b></label>
+										 <br>
 											<input
 												type="text"
 												placeholder="Ingresar email"
 												name="userEmail"
-												class="form-control <?= isset($errors['email']) ? 'is-invalid' : ''; ?>"
+												class="formInput <?= isset($errors['email']) ? 'is-invalid' : ''; ?>"
 												value="<?= $userEmail; ?>"
 											>
 												<?php if (isset($errors['email'])): ?>
@@ -101,12 +110,15 @@
 												<?php endif; ?>
 										</div>
 										<div class="">
+											<br>
+											<br>
 											<label><b>Apodo</b></label>
+											<br>
 											<input
 											type="text"
 											placeholder="Apodo"
 											name="userNickName"
-											class="form-control <?= isset($errors['nickName']) ? 'is-invalid' : ''; ?>"
+											class="formInput <?= isset($errors['nickName']) ? 'is-invalid' : ''; ?>"
 											value="<?= $userNickName; ?>"
 											>
 											<?php if (isset($errors['userName'])): ?>
@@ -116,12 +128,15 @@
 											<?php endif; ?>
 										</div>
 										<div class="">
+											<br>
+											<br>
 											<label><b>Password:</b></label>
+											<br>
 											<input
 												type="password"
 												placeholder="Contraseña"
 												name="userPassword"
-												class="form-control <?= isset($errors['password']) ? 'is-invalid' : ''; ?>"
+												class="formInput <?= isset($errors['password']) ? 'is-invalid' : ''; ?>"
 											>
 											<?php if (isset($errors['password'])): ?>
 												<div class="invalid-feedback">
@@ -130,12 +145,15 @@
 											<?php endif; ?>
 										</div>
 										<div class="">
+											<br>
+											<br>
 											<label><b>Repetir password:</b></label>
+											<br>
 											<input
 												type="password"
 												placeholder="Repetir password"
 												name="userRePassword"
-												class="form-control <?= isset($errors['password']) ? 'is-invalid' : ''; ?>"
+												class="formInput <?= isset($errors['password']) ? 'is-invalid' : ''; ?>"
 											>
 											<?php if (isset($errors['password'])): ?>
 												<div class="invalid-feedback">
@@ -144,12 +162,16 @@
 											<?php endif; ?>
 										</div>
 										<div class="">
+											<br>
+											<br>
 											<label><b>País de nacimiento:</b></label>
+											<br>
 											<select
 												name="userCountry"
-												class="form-control <?= isset($errors['country']) ? 'is-invalid' : ''; ?>"
+												class="formInput <?= isset($errors['country']) ? 'is-invalid' : ''; ?>"
 											>
 												<option value="">Elegí un país</option>
+												<br>
 												<?php foreach ($countries as $code => $country): ?>
 													<option
 														<?= $code == $userCountry ? 'selected' : '' ?>
@@ -163,13 +185,17 @@
 											<?php endif; ?>
 										</div>
 										<div class="">
+											<br>
+											<br>
 											<label><b>Imagen de perfil:</b></label>
+											<br>
 											<div class="custom-file">
 												<input
 													type="file"
 													class="custom-file-input <?= isset($errors['image']) ? 'is-invalid' : ''; ?>"
 												 	name="userAvatar"
 												>
+
 												<label class="custom-file-label">Elija el archivo...</label>
 												<?php if (isset($errors['image'])): ?>
 													<div class="invalid-feedback">
@@ -180,17 +206,11 @@
 
 										<p>Creando una cuenta aceptas nuestras <a href="#" style="color:dodgerblue">Politicas de privacidad</a>.</p>
 
-				     <button type="button" class="cancelbtn">Cancelar</button>
-				     <button type="submit" class="signupbtn">Registrarme</button>
+				     <button type="button" class="cancelBtn">Cancelar</button>
+				     <button type="submit" class="signupBtn">Registrarme</button>
 
 				 	</form>
 				 </div>
 			 </div>
-				 <div class="container-img">
-					 <img src="images/page-img/leaves.jpg"	class="page-img">
-				 </div>
-			 <div class="corteFooter">
-
-			 </div>
-		<?php require_once "partials/footer.php"; ?>
+			 <?php require_once "partials/footer.php"; ?>
 </html>

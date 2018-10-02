@@ -10,23 +10,6 @@
 		$_SESSION['user'] = $user;
 	}
 
-	// function myDebug
-	function myDebug($dato, $type = NULL) {
-		echo "<pre>";
-		switch ($type) {
-			case 'print_r':
-				print_r($dato);
-				break;
-			case 'echo':
-				echo $dato;
-				break;
-			default:
-				var_dump($dato);
-				break;
-		}
-		echo "</pre>";
-		exit;
-	}
 
 	// Validar el Register
 	function registerValidate($formData, $files) {
