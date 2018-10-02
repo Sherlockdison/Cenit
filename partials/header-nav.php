@@ -10,8 +10,7 @@
 			<a href="#" class="toggle-nav"> </a>
 
 			<ul>
-				<li><a class="link-nav-" href="index.php">Inicio</a></li>
-				<li><a class="link-nav" href="profile.php">Perfil</a></li>
+				<li><a class="link-nav-" href="index.php">Inicio</a></li>				
 				<li><a class="link-nav" href="faq.php">Preguntas Frecuentes</a></li>
 				<li><a class="link-nav" href="product-catalog.php">Tienda</a></li>
 			</ul>
