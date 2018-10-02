@@ -18,11 +18,12 @@
 				<?php if ( isLogged() ) : ?>
 					<li>
 						<a
+							class="nameUsNav"
 							href="profile.php"
 						>
 							<img
 								class="imgNavProf"
-								src="data/avatars/<?= $theUser['avatar'] ?>"								
+								src="data/avatars/<?= $theUser['avatar'] ?>"
 							>
 							<?= $theUser['name'] ?>
 						</a>

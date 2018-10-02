@@ -73,10 +73,7 @@
 		         <h2>Registrate</h2>
 		         	<p>Por favor llena este formulario <br> para crear una cuenta.</p>
 		         		<br>
-									<div class="">
-										<br>
-										<br>
-										<label><b>Nombre completo</b></label>
+									<label><b>Nombre completo</b></label>
 										<br>
 		 								 <input
 										 	type="text"
@@ -90,9 +87,7 @@
 													<?= $errors['fullName'] ?>
 												</div>
 											<?php endif; ?>
-										</div>
-										<div class="">
-											<br>
+
 											<br>
 										 <label><b>Correo electrónico:</b></label>
 										 <br>
@@ -108,15 +103,12 @@
 														<?= $errors['email'] ?>
 													</div>
 												<?php endif; ?>
-										</div>
-										<div class="">
 											<br>
-											<br>
-											<label><b>Apodo</b></label>
+											<label><b>Nombre de usuario</b></label>
 											<br>
 											<input
 											type="text"
-											placeholder="Apodo"
+											placeholder="Nombre de usuario"
 											name="userNickName"
 											class="formInput <?= isset($errors['nickName']) ? 'is-invalid' : ''; ?>"
 											value="<?= $userNickName; ?>"
@@ -126,9 +118,7 @@
 													<?= $errors['userName'] ?>
 												</div>
 											<?php endif; ?>
-										</div>
-										<div class="">
-											<br>
+
 											<br>
 											<label><b>Password:</b></label>
 											<br>
@@ -143,9 +133,7 @@
 													<?= $errors['password'] ?>
 												</div>
 											<?php endif; ?>
-										</div>
-										<div class="">
-											<br>
+
 											<br>
 											<label><b>Repetir password:</b></label>
 											<br>
@@ -160,15 +148,13 @@
 													<?= $errors['password'] ?>
 												</div>
 											<?php endif; ?>
-										</div>
-										<div class="">
-											<br>
+
 											<br>
 											<label><b>País de nacimiento:</b></label>
 											<br>
 											<select
 												name="userCountry"
-												class="formInput <?= isset($errors['country']) ? 'is-invalid' : ''; ?>"
+												class="custom-file <?= isset($errors['country']) ? 'is-invalid' : ''; ?>"
 											>
 												<option value="">Elegí un país</option>
 												<br>
@@ -183,9 +169,7 @@
 													<?= $errors['country'] ?>
 												</div>
 											<?php endif; ?>
-										</div>
-										<div class="">
-											<br>
+
 											<br>
 											<label><b>Imagen de perfil:</b></label>
 											<br>
