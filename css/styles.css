@@ -282,7 +282,6 @@ border-radius: 6px;
 	}
 	.navbar-nav {
 		display: flex;
-		flex-wrap: wrap;
 		width: 80%;
 	}
 	.navbar-nav ul {
@@ -303,7 +302,6 @@ border-radius: 6px;
 		font-size: 1em;
 		text-align: center;
 		text-transform: uppercase;
-
 	}
 	.navbar-nav img {
 		width: 50%;
@@ -436,11 +434,13 @@ border-radius: 6px;
 		display: flex;
 		justify-content: center;
 	}
+
 	.container-img{
-		padding-top: 120px;
+		padding-top: 100px;
 		display: flex;
-		width: 25%;
-		height: 550px;
+		width: 28%;
+		height: 570px;
+		margin: 1%;
 	}
 
 	/* .container-img img {
@@ -449,8 +449,8 @@ border-radius: 6px;
 	} */
 
 	.container-form{
-		width: 100%;
-		display: flex;
+		width: 35%;
+    display: flex;
 	}
 
 	/* _____profile.php___________________________ */

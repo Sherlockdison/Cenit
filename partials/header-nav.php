@@ -15,11 +15,10 @@
 				<li><a class="link-nav" href="faq.php">Preguntas Frecuentes</a></li>
 				<li><a class="link-nav" href="product-catalog.php">Tienda</a></li>
 			</ul>
-			<ul>
+			<ul class="controlsUser">
 				<?php if ( isLogged() ) : ?>
 					<li>
 						<a
-							class="link-nav"
 							href="profile.php"
 						>
 							<img
@@ -31,7 +30,6 @@
 					</li>
 					<li>
 						<a
-							class="link-nav"
 							href="logout.php"
 							>Logout
 						</a>
@@ -39,14 +37,12 @@
 				<?php else : ?>
 					<li>
 						<a
-							class="link-nav"
 							href="login.php"
 							>Logueate
 						</a>
 					</li>
 				<li>
 					<a
-						class="link-nav"
 						href="register.php"
 						>Registráte
 					</a>
