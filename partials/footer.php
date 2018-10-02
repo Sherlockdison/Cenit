@@ -36,3 +36,11 @@
           <h6><strong>by Camila & Edison - FullStacks - DigitalHouse @2018.</strong> Todos los derechos reservados.</h6>
         </div>
       </footer>
+
+      <script src="js/jquery-3.3.1.min.js"></script>
+			   <script>
+				     $(".toggle-nav").click(function () {
+					          $(".navbar-nav ul").slideToggle(350);
+              });
+        </script>
+    </body>

@@ -26,9 +26,10 @@
 				<?php endforeach; ?>
 			</ul>
 		<?php else : ?>
-			<br>
-			<h2 class="alert alert-danger">No hay usuarios registrados</h2>
-		<?php endif; ?>
-	</div>
+				<br>
+				<h2 class="alert alert-danger">No hay usuarios registrados</h2>
+			<?php endif; ?>
+		</div>
 
-<?php require_once 'includes/footer.php' ?>
+	<?php require_once 'includes/footer.php' ?>
+</html>

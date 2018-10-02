@@ -48,11 +48,5 @@
 
 		<?php require_once "partials/footer.php"; ?>
 
-			<script src="js/jquery-3.3.1.min.js"></script>
-			<script>
-				$(".toggle-nav").click(function () {
-					$(".navbar-nav ul").slideToggle(350);
-				});
-		</script>
-	</body>
+
 </html>
