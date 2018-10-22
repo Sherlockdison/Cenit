@@ -38,6 +38,7 @@
 	   						<img src="images/page-img/aquarium-01.jpg"	class="page-img">
 	  			</div>
 					<div class="container-form">
+						<h2>Logueate</h2>
 						<?php if ( $errors ): ?>
 							<div class="alertDanger">
 								<ul>
@@ -47,7 +48,6 @@
 								</ul>
 							</div>
 						<?php endif; ?>
-						<h2>Logueate</h2>
 		  		<form method="post">
 			    	<label><b>Email</b></label>
 						<br>
@@ -55,10 +55,10 @@
 						type="text"
 						placeholder="Ingresa tu nombre de usuario"
 						name="userEmail" required
-						class= "formInput <?= isset($errors['email']) ? 'is-invalid' : ''; ?>"
+						class= "formInput <?= isset($errors['email']) ? 'invalidInputBorder' : ''; ?>"
 						value="<?= $userEmail; ?>">
 						<?php if (isset($errors['email'])): ?>
-							<div class="invalid-feedback">
+							<div class="invalidInput">
 								<?= $errors['email'] ?>
 							</div>
 						<?php endif; ?>
@@ -71,16 +71,15 @@
 						type="password"
 						placeholder= "Ingresa tu contraseña"
 						name="userPassword" required
-						class= "formInput <?= isset($errors['password']) ? 'is-invalid' : ''; ?>"
+						class= "formInput <?= isset($errors['password']) ? 'invalidInputBorder' : ''; ?>"
 
 					<?php if (isset($errors['password'])): ?>
-						<div class="invalid-feedback">
+						<div class="invalidInput">
 							<?= $errors['password'] ?>
 						</div>
-					<?php endif; ?> >
+					<?php endif; ?>
 							<br>
-							<br>
-							<br>
+							<br>						
 						<label class="checkboxContainer">
 							<input class= "formCheckbox" type="checkbox" checked="checked" name="remember"> Recordarme
 						</label>

@@ -39,70 +39,53 @@ footer {
 img{
 	width: 100%;
 }
+
+		/* clases de error en formularios */
+	.invalidInputBorder {
+		border-color: #ff5858 !important;
+		padding: 6px;
+		margin-top: 5px;
+	}
+
+	.invalidInput {
+		padding: 0% 5%;
+		text-align: left;
+		width: 100%;
+		margin-top: 0.25rem;
+		font-size: 80%;
+		color: #dc3545;
+	}
 		/* clases de bootstrap que se deben renombrar y reestructurar para que funcionen de forma correcto en la pag */
-	.is-invalid {
-			border-color: rgba(199, 0, 0, 0.71) ;
-			padding: 6px;
-			margin-top: 5px;
-		}
-
 	.alertDanger {
-  color: #721c24;
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
-	}
-
-	.form-control {
-	  display: block;
-	  width: 100%;
-	  height: calc(2.25rem + 2px);
-	  padding: 0.375rem 0.75rem;
-	  font-size: 1rem;
-	  line-height: 1.5;
-	  color: #495057;
-	  background-color: #fff;
-	  background-clip: padding-box;
-	  border: 1px solid #ced4da;
-	  border-radius: 0.25rem;
-	  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-	}
-	.invalid-feedback {
-	  display: none;
-	  width: 100%;
-	  margin-top: 0.25rem;
-	  font-size: 80%;
 	  color: #dc3545;
+		text-align: left;
+		font-size: 80%;
+		padding: 5%;
 	}
-	.custom-file {
-	  position: relative;
-	  display: inline-block;
-	  width: 55%;
-	  height: calc(2.25rem + 2px);
-	  margin-bottom: 0;
-		border-color: #000;
+	.customFile {
+		position: relative;
+		overflow: hidden;
+		width: auto;
+		padding: 6px;
+		margin: 5px 0px;
 	}
-	.custom-file-input {
-	  position: relative;
-	  z-index: 2;
-	  width: 100%;
+	.customFileInput {
+		position: relative;
+	  z-index: 1;
+	  width: 90%;
 	  height: calc(2.25rem + 2px);
 	  margin: 0;
 	  opacity: 0;
 		border-color: #000;
 	}
-	.custom-file-label {
-	  position: absolute;
-	  top: 0;
-	  right: 0;
-	  left: 0;
-	  z-index: 1;
-	  height: calc(2.25rem + 2px);
-	  padding: 0.375rem 0.75rem;
-	  line-height: 1.5;
-	  color: #000000;
-	  background-color: #fff;
-	  border: 1px solid #ced4da;
-	  border-radius: 0.25rem;
+	.customFileLabel {
+		position: absolute;
+		text-align: left;
+		width: 90%;
+		bottom: 6px;
+		right: 17px;
+		border: 2px solid;
+		padding: 7px !important;
 	}
 
 /*------moBile menos de 640px--------*/
@@ -256,14 +239,18 @@ padding: 15px;
 	}
 	.container-form{
 		width: 100%;
-		display: block;
+		display: inline-block;
 		text-align: center;
 		margin: 5%;
 	}
+	.container-form label{
+		padding-top: 2px;
+	}
 	.formInput {
 		border-color: black ;
+		width: 90%;
 		padding: 6px;
-		margin-top: 5px;
+		margin: 5px 0px;
 	}
 	.signupBtn
 	{

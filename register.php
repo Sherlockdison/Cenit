@@ -58,133 +58,123 @@
 			 <img src="images/page-img/leaves.jpg"	class="page-img">
 		 </div>
 			   <div class="container-form" "register">
-					 <?php if ( $errors ): ?>
-						 <div class="alertDanger">
-							 <ul>
-								 <?php foreach ($errors as $error): ?>
-									 <li> <?= $error ?> </li>
-								 <?php endforeach; ?>
-							 </ul>
-						 </div>
-					 <?php endif; ?>
 				   <form method="post" enctype="multipart/form-data">
 		         <h2>Registrate</h2>
 		         	<p>Por favor llena este formulario <br> para crear una cuenta.</p>
-		         		<br>
+
+								<?php if ( $errors ): ?>
+									<div class="alertDanger">
+										<ul>
+											<?php foreach ($errors as $error): ?>
+												<li> <?= $error ?> </li>
+											<?php endforeach; ?>
+										</ul>
+									</div>
+								<?php endif; ?>
 									<label><b>Nombre completo</b></label>
-										<br>
+
 		 								 <input
 										 	type="text"
 											placeholder="Nombre completo"
 											name="userFullName"
-											class="formInput <?= isset($errors['fullName']) ? 'is-invalid' : ''; ?>"
+											class="formInput <?= isset($errors['fullName']) ? 'invalidInputBorder' : ''; ?>"
 											value="<?= $userFullName; ?>"
 											>
 											<?php if (isset($errors['fullName'])): ?>
-												<div class="invalid-feedback">
+												<div class="invalidInput">
 													<?= $errors['fullName'] ?>
 												</div>
 											<?php endif; ?>
 
-											<br>
+
 										 <label><b>Correo electrónico:</b></label>
-										 <br>
+
 											<input
 												type="text"
 												placeholder="Ingresar email"
 												name="userEmail"
-												class="formInput <?= isset($errors['email']) ? 'is-invalid' : ''; ?>"
+												class="formInput <?= isset($errors['email']) ? 'invalidInputBorder' : ''; ?>"
 												value="<?= $userEmail; ?>"
 											>
 												<?php if (isset($errors['email'])): ?>
-													<div class="invalid-feedback">
+													<div class="invalidInput">
 														<?= $errors['email'] ?>
 													</div>
 												<?php endif; ?>
-											<br>
+
 											<label><b>Nombre de usuario</b></label>
-											<br>
-											<input
-											type="text"
-											placeholder="Nombre de usuario"
-											name="userNickName"
-											class="formInput <?= isset($errors['nickName']) ? 'is-invalid' : ''; ?>"
-											value="<?= $userNickName; ?>"
-											>
+
+											<input type="text"	placeholder="Nombre de usuario" name="userNickName" class="formInput <?= isset($errors['nickName']) ? 'invalidInputBorder' : ''; ?>"
+											value="<?= $userNickName; ?>">
 											<?php if (isset($errors['userName'])): ?>
-												<div class="invalid-feedback">
+												<div class="invalidInput">
 													<?= $errors['userName'] ?>
 												</div>
 											<?php endif; ?>
 
-											<br>
+
 											<label><b>Password:</b></label>
-											<br>
+
 											<input
 												type="password"
 												placeholder="Contraseña"
 												name="userPassword"
-												class="formInput <?= isset($errors['password']) ? 'is-invalid' : ''; ?>"
+												class="formInput <?= isset($errors['password']) ? 'invalidInputBorder' : ''; ?>"
 											>
 											<?php if (isset($errors['password'])): ?>
-												<div class="invalid-feedback">
+												<div class="invalidInput">
 													<?= $errors['password'] ?>
 												</div>
 											<?php endif; ?>
 
-											<br>
+
 											<label><b>Repetir password:</b></label>
-											<br>
-											<input
-												type="password"
-												placeholder="Repetir password"
-												name="userRePassword"
-												class="formInput <?= isset($errors['password']) ? 'is-invalid' : ''; ?>"
-											>
+
+											<input type="password"	placeholder="Repetir password" name="userRePassword"	class="formInput <?= isset($errors['password']) ? 'invalidInputBorder' : ''; ?>">
 											<?php if (isset($errors['password'])): ?>
-												<div class="invalid-feedback">
+												<div class="invalidInput">
 													<?= $errors['password'] ?>
 												</div>
 											<?php endif; ?>
 
 											<br>
 											<label><b>País de nacimiento:</b></label>
-											<br>
+
+
 											<select
 												name="userCountry"
-												class="custom-file <?= isset($errors['country']) ? 'is-invalid' : ''; ?>"
+												class="formInput <?= isset($errors['country']) ? 'invalidInputBorder' : ''; ?>"
 											>
 												<option value="">Elegí un país</option>
-												<br>
+
 												<?php foreach ($countries as $code => $country): ?>
 													<option
 														<?= $code == $userCountry ? 'selected' : '' ?>
-														value="<?= $code ?>"><?= $country ?></option>
+														value="<?= $code ?>">
+														<?= $country ?>
+													</option>
 												<?php endforeach; ?>
 											</select>
+
+
 											<?php if (isset($errors['country'])): ?>
-												<div class="invalid-feedback">
+												<div class="invalidInput">
 													<?= $errors['country'] ?>
 												</div>
 											<?php endif; ?>
 
-											<br>
-											<label><b>Imagen de perfil:</b></label>
-											<br>
-											<div class="custom-file">
-												<input
-													type="file"
-													class="custom-file-input <?= isset($errors['image']) ? 'is-invalid' : ''; ?>"
-												 	name="userAvatar"
-												>
 
-												<label class="custom-file-label">Elija el archivo...</label>
+											<label><b>Imagen de perfil:</b></label>
+												<div class="customFile">
+													<input type="file" class="customFileInput" name="userAvatar">
+
+												<label class="customFileLabel <?= isset($errors['image']) ? 'invalidInputBorder' : ''; ?>">Elija el archivo...</label>
+											</div>
 												<?php if (isset($errors['image'])): ?>
-													<div class="invalid-feedback">
+													<div class="invalidInput">
 														<?= $errors['image'] ?>
 													</div>
 												<?php endif; ?>
-										</div>
 
 										<p>Creando una cuenta aceptas nuestras <a href="#" style="color:dodgerblue">Politicas de privacidad</a>.</p>
 

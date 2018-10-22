@@ -54,7 +54,7 @@
 		}
 
 		if ( $avatar['error'] !== UPLOAD_ERR_OK ) {
-			$errors['image'] = 'Sube una imagen';
+			$errors['image'] = 'Subí una imagen';
 		} else {
 			$ext = pathinfo($avatar['name'], PATHINFO_EXTENSION);
 			if ( !in_array($ext, ALLOWED_IMAGE_TYPES) ) {
