@@ -85,8 +85,7 @@
 													<?= $errors['fullName'] ?>
 												</div>
 											<?php endif; ?>
-
-
+												<br>
 										 <label><b>Correo electrónico:</b></label>
 
 											<input
@@ -127,6 +126,7 @@
 												</div>
 											<?php endif; ?>
 
+											<br>
 
 											<label><b>Repetir password:</b></label>
 
@@ -143,8 +143,7 @@
 
 											<select
 												name="userCountry"
-												class="formInput <?= isset($errors['country']) ? 'invalidInputBorder' : ''; ?>"
-											>
+												class="formInput <?= isset($errors['country']) ? 'invalidInputBorder' : ''; ?>">
 												<option value="">Elegí un país</option>
 
 												<?php foreach ($countries as $code => $country): ?>
@@ -163,6 +162,7 @@
 												</div>
 											<?php endif; ?>
 
+											<br>
 
 											<label><b>Imagen de perfil:</b></label>
 												<div class="customFile">
