@@ -15,50 +15,19 @@
 				<li><a class="link-nav" href="product-catalog.php">Tienda</a></li>
 			</ul>
 			<ul class="controlsUser">
-				<?php if ( isLogged() ) : ?>
-					<li>
-						<a
-							class="nameUsNav"
-							href="profile.php"
-						>
-							<img
-								class="imgNavProf"
-								src="data/avatars/<?= $theUser['avatar'] ?>"
-							>
-							<?= $theUser['name'] ?>
-						</a>
-					</li>
-					<li>
-						<a
-							href="logout.php"
-							>Logout
-						</a>
-					</li>
+
+				<?php if ( $auth->isLoged() ) : ?>
+				<?php $theUser = $db->getUserByEmail($_SESSION['userEmail']); ?>
+
+					<li><a class="nameUsNav"	href="profile.php">	<img class="imgNavProf" src="data/avatars/<?= $theUser->getImage() ?>">Hola<?= $theUser->getName() ?></a></li>
+					<li><a href="logout.php">Logout	</a></li>
+
 				<?php else : ?>
-					<li>
-						<a
-							href="login.php"
-							>Logueate
-						</a>
-					</li>
-				<li>
-					<a
-						href="register.php"
-						>Registráte
-					</a>
-				</li>
-				<li
-					class="li-img"
-				>
-					<a
-						href="#"
-					>
-					<img
-						class="shop-car"
-						src="images/bag.svg"
-						alt="shop-car">
-					</a>
-				</li>
+
+					<li><a href="login.php">Logueate</a></li>
+					<li><a href="register.php">Registráte</a></li>
+					<li	class="li-img"><a href="#"><img	class="shop-car"	src="images/bag.svg"	alt="shop-car"></a></li>
+					
 				<?php endif; ?>
 			</ul>
     </nav>

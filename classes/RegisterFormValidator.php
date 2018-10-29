@@ -4,6 +4,7 @@
 	class RegisterFormValidator extends FormValidator
 	{
 		private $name;
+		private $userName;
 		private $email;
 		private $password;
 		private $rePassword;
@@ -13,6 +14,7 @@
 		public function __construct($post, $files)
 		{
 			$this->name = isset($post['name']) ?  $post['name'] : '';
+			$this->userName = isset($post['userName']) ? $post[ 'userName'] : '';
 			$this->email = isset($post['email']) ?  $post['email'] : '';
 			$this->password = isset($post['password']) ?  $post['password'] : '';
 			$this->rePassword = isset($post['rePassword']) ?  $post['rePassword'] : '';
@@ -26,12 +28,16 @@
 				$this->addError('name', 'Escribí tu nombre completo');
 			}
 
+			if ( empty($this->userName) ) {
+				$this->addError('userName', 'Escribí un nombre de usuario');
+			}
+
 			if ( empty($this->email) ) {
 				$this->addError('email', 'Escribí tu correo electrónico');
 			} else if ( !filter_var($this->email, FILTER_VALIDATE_EMAIL) ) {
 				$this->addError('email', 'Escribí un correo válido');
 			}
-			
+
 			if ( empty($this->password) || empty($this->rePassword) ) {
 				$this->addError('password', 'La contraseña no puede estar vacía');
 			} elseif ( $this->password != $this->rePassword) {
@@ -59,6 +65,11 @@
 		public function getName()
 		{
 			return $this->name;
+		}
+
+		public function getUserName()
+		{
+			return $this->userName;
 		}
 
 		public function getEmail()

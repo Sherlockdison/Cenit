@@ -1,58 +1,48 @@
 <?php
-		// controladores
-	require_once 'register-controller.php';
+		// llamar classes
+	require_once 'autoload.php';
 
-		// preguntamos si el usuario esta logeado para saber si mostrar o no el profile.php
-	if ( isLogged() ) {
-		header('location: profile.php');
-		exit;
-	}
 	// Titulo de la pagina y llamado a partials
+
 	$pageTitle = "Mi pefil";
 	include "partials/head.php";
 
-	$countries = [
-		'ar' => 'Argentina',
-		'bo' => 'Bolivia',
-		'br' => 'Brasil',
-		'co' => 'Colombia',
-		'cl' => 'Chile',
-		'ec' => 'Ecuador',
-		'pa' => 'Paraguay',
-		'pe' => 'Perú',
-		'uy' => 'Uruguay',
-		've' => 'Venezuela',
-	];
+  $FormData = new RegisterFormValidator($_POST, $_FILES);
 
-																			// Persistencia de datos
+		// preguntamos si el usuario esta logeado para saber si mostrar o no el profile.php del objeto auth
 
-	$userFullName = isset($_POST['userFullName']) ? trim($_POST['userFullName']) : '';
-	$userNickName = isset($_POST['userNickName']) ? trim($_POST['userNickName']) : '';
-	$userEmail = isset($_POST['userEmail']) ? trim($_POST['userEmail']) : '';
-	$userCountry = isset($_POST['userCountry']) ? trim($_POST['userCountry']) : '';
-
-	$errors = [];
-
-	if ($_POST) {
-		$errors = registerValidate($_POST, $_FILES);
-
-		if ( count($errors) == 0 ) {
-
-			$imageName = saveImage($_FILES['userAvatar']);
-
-			$_POST['avatar'] = $imageName;
-
-			$user = saveUser($_POST);
-
-			logIn($user);
+	if( $auth->isLoged() ) {
+			header('location: profile.php');
 		}
-	}
 
+		if ($_POST) {
 
+			if ( $FormData->isValid() ) {
+
+				if ($db->emailExist($FormData->getEmail())) {
+					$FormData->addError('email', 'Correo ya está registrado');
+				} elseif ($db->userNameExist($FormData->getUserName())) {
+					$FormData->addError('userName', 'Nombre de usuario ya registrado');
+				}else {
+					$imageName = SaveImage::uploadImage($_FILES['avatar']);
+
+					$_POST['image'] = $imageName;
+					$user = new User($_POST);
+					$user->setId($db->generateId());
+
+					$db->saveUser($user);
+
+					$auth->logIn($user->getEmail());
+				}
+			}
+		}
 ?>
 
+
+
+
 <body>
-	<?php require_once "partials/header-nav.php";  ?>
+<?php require_once "partials/header-nav.php";  ?>
 	 <div class="container-page">
 		 <div class="container-img">
 			 <img src="images/page-img/leaves.jpg"	class="page-img">
@@ -62,67 +52,46 @@
 		         <h2>Registrate</h2>
 		         	<p>Por favor llena este formulario <br> para crear una cuenta.</p>
 
-								<?php if ( $errors ): ?>
-									<div class="alertDanger">
-										<ul>
-											<?php foreach ($errors as $error): ?>
-												<li> <?= $error ?> </li>
-											<?php endforeach; ?>
-										</ul>
-									</div>
-								<?php endif; ?>
 									<label><b>Nombre completo</b></label>
 
-		 								 <input
-										 	type="text"
-											placeholder="Nombre completo"
-											name="userFullName"
-											class="formInput <?= isset($errors['fullName']) ? 'invalidInputBorder' : ''; ?>"
-											value="<?= $userFullName; ?>"
-											>
-											<?php if (isset($errors['fullName'])): ?>
+		 								 <input	type="text"	placeholder="Nombre completo"	name="name" class="formInput <?= $FormData->fieldHasError('name') ? 'invalidInputBorder' : ''; ?>"	value="<?=$FormData->getName(); ?>">
+
+											<?php if(	$FormData->fieldHasError('name')): ?>
 												<div class="invalidInput">
-													<?= $errors['fullName'] ?>
+													<?= $FormData->getFieldError('name') ?>
 												</div>
 											<?php endif; ?>
 												<br>
+
 										 <label><b>Correo electrónico:</b></label>
 
-											<input
-												type="text"
-												placeholder="Ingresar email"
-												name="userEmail"
-												class="formInput <?= isset($errors['email']) ? 'invalidInputBorder' : ''; ?>"
-												value="<?= $userEmail; ?>"
-											>
-												<?php if (isset($errors['email'])): ?>
+											<input type="text" placeholder="Ingresar email" name="email" class="formInput <?= $FormData->fieldHasError('email') ? 'invalidInputBorder' : ''; ?>"	value="<?= $FormData->getEmail(); ?>">
+
+												<?php if( $FormData->fieldHasError('email')): ?>
 													<div class="invalidInput">
-														<?= $errors['email'] ?>
+														<?= $FormData->getFieldError('email'); ?>
 													</div>
 												<?php endif; ?>
 
 											<label><b>Nombre de usuario</b></label>
 
-											<input type="text"	placeholder="Nombre de usuario" name="userNickName" class="formInput <?= isset($errors['nickName']) ? 'invalidInputBorder' : ''; ?>"
-											value="<?= $userNickName; ?>">
-											<?php if (isset($errors['userName'])): ?>
+											<input type="text"	placeholder="Nombre de usuario" name="userName" class="formInput <?= $FormData->fieldHasError('userName') ? 'invalidInputBorder' : ''; ?>"
+											value="<?= $FormData->getUserName(); ?>">
+
+											<?php if ($FormData->fieldHasError('userName')): ?>
 												<div class="invalidInput">
-													<?= $errors['userName'] ?>
+													<?= $FormData->getFieldError('userName') ?>
 												</div>
 											<?php endif; ?>
 
 
 											<label><b>Password:</b></label>
 
-											<input
-												type="password"
-												placeholder="Contraseña"
-												name="userPassword"
-												class="formInput <?= isset($errors['password']) ? 'invalidInputBorder' : ''; ?>"
-											>
-											<?php if (isset($errors['password'])): ?>
+											<input	type="password"	placeholder="Contraseña"	name="password"	class="formInput <?= $FormData->fieldHasError('password') ? 'invalidInputBorder' : ''; ?>">
+
+											<?php if ($FormData->fieldHasError('password') ):?>
 												<div class="invalidInput">
-													<?= $errors['password'] ?>
+													<?= $FormData->getFieldError('password') ?>
 												</div>
 											<?php endif; ?>
 
@@ -130,49 +99,51 @@
 
 											<label><b>Repetir password:</b></label>
 
-											<input type="password"	placeholder="Repetir password" name="userRePassword"	class="formInput <?= isset($errors['password']) ? 'invalidInputBorder' : ''; ?>">
-											<?php if (isset($errors['password'])): ?>
+											<input type="password"	placeholder="Repetir password" name="rePassword" class="formInput <?= $FormData->fieldHasError('password') ? 'invalidInputBorder' : ''; ?>">
+
+											<?php if ($FormData->fieldHasError('password')): ?>
 												<div class="invalidInput">
-													<?= $errors['password'] ?>
+													<?= $FormData->getFieldError('password') ?>
 												</div>
 											<?php endif; ?>
 
 											<br>
+
 											<label><b>País de nacimiento:</b></label>
 
 
-											<select
-												name="userCountry"
-												class="formInput <?= isset($errors['country']) ? 'invalidInputBorder' : ''; ?>">
+											<select	name="country" class="formInput <?= $FormData->fieldHasError('country') ? 'invalidInputBorder' : ''; ?>">
+
 												<option value="">Elegí un país</option>
 
-												<?php foreach ($countries as $code => $country): ?>
-													<option
-														<?= $code == $userCountry ? 'selected' : '' ?>
-														value="<?= $code ?>">
-														<?= $country ?>
-													</option>
-												<?php endforeach; ?>
+													<?php foreach (COUNTRIES as $code => $country): ?>
+														<option
+															<?= $code == $FormData->getCountry() ? 'selected' : '' ?> value="<?= $code ?>">	<?= $country ?>
+														</option>
+													<?php endforeach; ?>
 											</select>
 
 
-											<?php if (isset($errors['country'])): ?>
+											<?php if ($FormData->fieldHasError('country')): ?>
 												<div class="invalidInput">
-													<?= $errors['country'] ?>
+													<?= $FormData->getFieldError('country') ?>
 												</div>
 											<?php endif; ?>
 
 											<br>
 
 											<label><b>Imagen de perfil:</b></label>
-												<div class="customFile">
-													<input type="file" class="customFileInput" name="userAvatar">
 
-												<label class="customFileLabel <?= isset($errors['image']) ? 'invalidInputBorder' : ''; ?>">Elija el archivo...</label>
+												<div class="customFile">
+													<input type="file" class="customFileInput" name="avatar">
+
+												<label class="customFileLabel <?= $FormData->fieldHasError('avatar') ? 'invalidInputBorder' : ''; ?>">Elija el archivo...</label>
 											</div>
-												<?php if (isset($errors['image'])): ?>
+												<?php if(
+													$FormData->fieldHasError('avatar')
+												): ?>
 													<div class="invalidInput">
-														<?= $errors['image'] ?>
+														<?= $FormData->getFieldError('avatar') ?>
 													</div>
 												<?php endif; ?>
 

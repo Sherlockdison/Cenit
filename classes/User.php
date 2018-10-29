@@ -3,6 +3,7 @@
 	class User
 	{
 		private $id;
+		private $userName;
 		private $name;
 		private $email;
 		private $password;
@@ -12,6 +13,7 @@
 		public function __construct($post)
 		{
 			$this->name = $post['name'];
+			$this->userName = $post['userName'];
 			$this->email = $post['email'];
 			$this->password = $post['password'];
 			$this->country = $post['country'];
@@ -26,6 +28,16 @@
 		public function getName()
 		{
 			return $this->name;
+		}
+
+		public function setUserName($userName)
+		{
+			$this->userName = $userName;
+		}
+
+		public function getUserName()
+		{
+			return $this->userName;
 		}
 
 		public function setEmail($email)
@@ -81,6 +93,7 @@
 			return [
 				'id' => $this->id,
 				'name' => $this->name,
+				'userName' => $this->userName,
 				'email' => $this->email,
 				'password' => $this->hashPassword($this->password),
 				'country' => $this->country,

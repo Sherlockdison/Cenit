@@ -28,6 +28,16 @@
 			return $finalUsersArray;
 		}
 
+		public function userNameExist($userName){
+			foreach (self::$allUsers  as $oneUser) {
+				if ($userName == $oneUser->userName) {
+					return true;
+				}
+			}
+
+			return false;
+		}
+
 		public function emailExist($email){
 			foreach (self::$allUsers  as $oneUser) {
 				if ($email == $oneUser->email) {
