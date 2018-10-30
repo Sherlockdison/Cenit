@@ -50,7 +50,7 @@
 
 		public function getUserByEmail($email){
 			foreach (self::$allUsers as $oneUser) {
-				if($oneUser->email == $email) {
+				if($email == $oneUser->email) {
 					$elUsuarioEncontrado = (array) $oneUser;
 					$finalUser = new User($elUsuarioEncontrado);
 					$finalUser->setId($elUsuarioEncontrado['id']);
