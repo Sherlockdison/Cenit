@@ -10,7 +10,8 @@ if ( !$auth->isLoged() ) {
 	include "partials/head.php";
 	$theUser = $db->getUserByEmail($_SESSION['userEmail']);
 
-	
+
+
 ?>
 <body>
 		<?php require_once "partials/header-nav.php"; ?>

@@ -1,9 +1,6 @@
 <?php
-  require_once 'register-controller.php';
+  require_once 'autoload.php';
 
-    if ( isLogged() ) {
-      $theUser = getUserByEmail($_SESSION['user']['email']);
-    }
     $pageTitle = "Preguntas frecuentes";
     include "partials/head.php";
 ?>

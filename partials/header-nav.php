@@ -15,9 +15,9 @@
 			<ul class="controlsUser">
 
 				<?php if ( $auth->isLoged() ) : ?>
-				<?php $theUser = $db->getUserByEmail($_SESSION['email']);			?>
+				<?php $theUser = $db->getUserByEmail($_SESSION['userEmail']);			?>
 
-					<li><a class="nameUsNav"	href="profile.php">	<img class="imgNavProf" src="data/avatars/<?= $theUser->getImage() ?>">Hola<?= $theUser->getName() ?></a></li>
+					<li><a class="nameUsNav"	href="profile.php">	<img class="imgNavProf" src="data/avatars/<?= $theUser->getImage() ?>">Hola <?= $theUser->getName() ?></a></li>
 					<li><a href="logout.php">Logout	</a></li>
 
 				<?php else : ?>
