@@ -8,29 +8,30 @@ if ( !$auth->isLoged() ) {
 
 	$pageTitle = "Mi pefil";
 	include "partials/head.php";
-	$theUser = $db->getUserByEmail($_SESSION['userEmail']);
-
-
 
 ?>
+
 <body>
 		<?php require_once "partials/header-nav.php"; ?>
-			<container class=container-user-profile>
+		<h1 class=user-name >Bienvenidx <?= $theUser->getName() ?></h1>
+			<div class="allContainer">
 					<div class="container-profile-img">
 						<img  class=user-profile-image
 						src="data/avatars/<?= $theUser->getImage() ?>" alt="" >
 					</div>
-						<br>
 					<div class="container-profile-data">
-						<h2 class=user-name><?= $theUser->getName() ?></h2>
-						<br>
-						<h3 class=user-data><?= $theUser->getEmail() ?></h3>
+					<h3 class=user-data><?= $theUser->getEmail() ?></h3>
 
-						<section class="user-profile-options">
-						<p><a	href="#"></a> Mis compras</p>
-						<p><a	href="#"></a> Wishlist</p>
-					</section>
+					<?php foreach (COUNTRIES as $code => $country): ?>
+
+						<h3 class=user-data>
+							<?= $code == $theUser->getCountry() ? "$country" : ""?> </h3>
+						<?php endforeach; ?>
+					</div>
 				</div>
-			</container>
+			<section class="user-profile-options">
+				<p><a	href="#"></a> Mis compras</p>
+				<p><a	href="#"></a> Wishlist</p>
+			</section>
 	<?php require_once "partials/footer.php"; ?>
 </html>

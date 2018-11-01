@@ -139,6 +139,9 @@ padding: 15px;
 	}
 	.nameUsNav{
 		text-transform: capitalize !important;
+		display: flex;
+    flex-wrap: wrap;
+    align-items: center;
 	}
 
 /*___________________body-index___________________*/
@@ -273,6 +276,39 @@ padding: 15px;
 		color: black;
 		background: white;
 		padding: 5px 10px;
+	}
+	/* _________________________________profile.php _______________________________________*/
+
+	.container-user-profile {
+		width: 80%;
+		margin: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.container-profile-img {
+		text-align: center;
+		width: auto;
+	}
+
+	.user-profile-image{
+	  width: 50%;
+	  border-radius: 50%;
+	}
+	.container-profile-data{
+		text-align: center;
+		width: 100%;
+		margin-right: 20px;
+	}
+	.user-name{
+	    text-align: center;
+	}
+
+	.user-profile-options {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
 	}
 /*---------------------------------Mobile + de 640px-------------------------------------*/
 
@@ -414,36 +450,6 @@ padding: 15px;
 		margin: 0 3.4%;
 	}
 
-/* _________________________________profile.php _______________________________________*/
-
-.container-user-profile {
-	width: 80%;
-	margin: auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-}
-.container-profile-img {
-	width: 50%;
-}
-
-.user-profile-image{
-  width: 80%;
-  border-radius: 50%;
-}
-.container-profile-data{
-	width: 100%;
-	margin-right: 20px;
-}
-.user-name{
-    text-align: center;
-}
-
-.user-profile-options {
-  width: 100%;
-  text-align: center;
-}
 
 /*--------------------------tablet y web--------------------------*/
 
@@ -482,30 +488,21 @@ padding: 15px;
 
 	/* _____profile.php___________________________ */
 
-	.container-user-profile {
-		width: 640px;
-		margin: 20px auto;
-		display: flex;
-		justify-content: center;
-		flex-direction: row;
-
-	}
 	.container-profile-img {
-		width: 50%;
+		width: auto;
+	}
 
-		}
+	.user-profile-image {
+		width: auto;
+		border-radius: 50%;
+  }
 	.container-profile-data{
-		width: 50%;
-
-			}
+		width: auto;
+  }
 	.user-name{
 			text-align: center;
 	}
-	.user-profile-options {
-		width: 100%;
-		text-align: center;
-	}
-}
+
 
 
 @media (min-width: 1000px) {
@@ -537,4 +534,28 @@ flex-wrap: wrap;
 }
 .question-container a {
 	color: #363636;
+}
+
+	/* _____profile.php___________________________ */
+
+.allContainer{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.container-profile-img {
+	width: auto;
+}
+
+.user-profile-image {
+	width: auto;
+	border-radius: 50%;
+}
+.container-profile-data{
+	width: auto;
+	padding: 18% 0%;
+}
+.user-name{
+		text-align: center;
 }
